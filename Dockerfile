@@ -36,4 +36,5 @@ COPY conf/settings.json /tmp/settings.json
 # Copy rclone tasks to /tmp, to potentially be used
 COPY conf/rclone-tasks.json /tmp/rclone-tasks.json
 ADD start.sh /_railway/start.sh
-ENTRYPOINT [ "/bin/sh", "/_railway/start.sh" ]
+# ENTRYPOINT [ "/bin/sh", "/_railway/start.sh" ]
+ENTRYPOINT ["/_railway/start.sh"]
