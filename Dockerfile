@@ -2,8 +2,7 @@ ARG PORT TOKEN
 FROM gitpod/openvscode-server:latest
 # ----------
 USER root
-RUN apt-get update
-RUN apt-get install -y openssl git curl wget unzip
+RUN apt-get update && apt-get install -y openssl git curl wget unzip
 RUN curl https://rclone.org/install.sh | bash
 # ----------
 USER openvscode-server
@@ -13,8 +12,7 @@ ENV PORT=${PORT}
 # ----------
 ENV HOME=/home/openvscode-server
 # Update PATH env
-ENV PATH="$PATH:/home/.openvscode-server/bin"
-RUN echo $PATH
+ENV PATH="$PATH:$HOME/.local/bin:/home/.openvscode-server/bin"
 # Apply development environment
 COPY ./devenv /home/openvscode-server/devenv
 # You can add custom software and dependencies for your environment below

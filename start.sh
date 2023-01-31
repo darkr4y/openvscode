@@ -117,4 +117,4 @@ echo "[$PREFIX] Starting code-server..."
 echo "[$PREFIX] Applying VS Code settings"
 cp /tmp/settings.json $OPENVSCODE_MACHINE_PATH/settings.json
 
-exec $OPENVSCODE_SERVER_ROOT/bin/openvscode-server --port $PORT --connection-token "${TOKEN:-$(openssl rand -hex 32)}" --host 0.0.0.0 -- $*
+exec $OPENVSCODE_SERVER_ROOT/bin/openvscode-server --port ${PORT:-0} --connection-token "${TOKEN:-$(openssl rand -hex 32)}" --host 0.0.0.0 -- $*
