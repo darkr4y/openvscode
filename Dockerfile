@@ -11,6 +11,7 @@ ENV OPENVSCODE_SERVER_ROOT=${OPENVSCODE_SERVER_ROOT}
 ENV TOKEN=${TOKEN}
 ENV PORT=${PORT}
 # ----------
+ENV SHELL=/bin/bash
 ENV HOME=/home/openvscode-server
 # Update PATH env
 ENV PATH="$PATH:/home/.openvscode-server/bin"

@@ -13,10 +13,9 @@ OPENVSCODE_USER_PATH="$HOME_PATH/.openvscode-server/data/User"
 
 OPENVSCODE_MACHINE_PATH="$HOME_PATH/.openvscode-server/data/Machine"
 
+[ -d "$OPENVSCODE_MACHINE_PATH" ] || mkdir -p $OPENVSCODE_MACHINE_PATH
+
 mkdir -p $START_DIR
-
-
-
 
 # function to clone the git repo or add a user's first file if no repo was specified.
 project_init () {
