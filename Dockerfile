@@ -11,7 +11,6 @@ ENV OPENVSCODE_SERVER_ROOT=${OPENVSCODE_SERVER_ROOT}
 ENV TOKEN=${TOKEN}
 ENV PORT=${PORT}
 # ----------
-ENV SHELL=/bin/bash
 ENV HOME=/home/openvscode-server
 # Update PATH env
 ENV PATH="$PATH:/home/.openvscode-server/bin"
@@ -36,5 +35,4 @@ COPY conf/settings.json /tmp/settings.json
 # Copy rclone tasks to /tmp, to potentially be used
 COPY conf/rclone-tasks.json /tmp/rclone-tasks.json
 ADD start.sh /_railway/start.sh
-# ENTRYPOINT [ "/bin/sh", "/_railway/start.sh" ]
-ENTRYPOINT ["/_railway/start.sh"]
+ENTRYPOINT [ "/bin/bash", "/_railway/start.sh" ]
